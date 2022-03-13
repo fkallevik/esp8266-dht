@@ -8,7 +8,7 @@ wifi.eventmon.register(wifi.eventmon.STA_GOT_IP, function(T)
                          print("Wifi connection is ready! IP address is: "..T.IP)
 
                          -- fetch and post data every x milliseconds
-                         tmr.create():alarm(5000, tmr.ALARM_AUTO, function()
+                         tmr.create():alarm(60000, tmr.ALARM_AUTO, function()
                                               dht_data = getDHTData()
                                               post(dht_data)
                                            end)
