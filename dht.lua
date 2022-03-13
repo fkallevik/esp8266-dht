@@ -1,6 +1,6 @@
 DATA_PIN = 4
 
-function getDHTData(pin)
+function getDHTData()
   status, temp, humi = dht.read(DATA_PIN)
   if status == dht.OK then
     print("DHT Temp: "..temp.." Humidity: "..humi.."\r\n")
