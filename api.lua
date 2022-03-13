@@ -1,5 +1,6 @@
 function post(dht_data)
-  http.post(API_URL.."/sauna/data",
+  local proto = HOST_PORT == 80 and "http" or "https"
+  http.post(proto.."://"..HOST.."/sauna/data",
             "Content-Type: application/json\r\n",
             "{\"temperature\":"..dht_data.temperature..", \"humidity\":"..dht_data.humidity.."}",
             function(code)
